@@ -5,6 +5,7 @@ from dataclasses import dataclass
 """
 TODO : Voir pour un système de déplacement sur la carte avec aussi si possible un système de zoom
 TODO : Voir pour mettre des templates déjà fait pour ne pas avoir 
+TODO : Documentation
 """
 
         
@@ -110,10 +111,8 @@ class Game:
         if not self.playing:
             if py.mouse.get_pressed()[0]:
                 self.grid.add_cell(mouse_pos[1] // self.grid.cell_size, mouse_pos[0] // self.grid.cell_size)
-                self.grid.cell_size += 1
             if py.mouse.get_pressed()[2]:
                 self.grid.remove_cell(mouse_pos[1] // self.grid.cell_size, mouse_pos[0] // self.grid.cell_size)
-                self.grid.cell_size -= 1
         if py.mouse.get_pressed()[1]:
             self.playing = not self.playing
         
